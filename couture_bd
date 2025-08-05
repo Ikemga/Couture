@@ -1,52 +1,17 @@
 SET SEARCH_PATH = "COUP";
+
 CREATE EXTENSION postgis;
 DROP TABLE IF EXISTS "atelier";
-CREATE TABLE "atelier"
-(
-	"id_atelier" INTEGER NOT NULL PRIMARY KEY,
-	"nom_atelier" VARCHAR(100) NOT NULL,
-	"description" VARCHAR(255),
-	"lieu" GEOMETRY (Point,4326),
-	"photo" BYTEA
-);
-
---  table personne 
-
-DROP TABLE IF EXISTS "personne";
-CREATE TABLE "personne"
-(
-	"id_personne" INTEGER NOT NULL PRIMARY KEY,
-	"nom" VARCHAR(100) NOT NULL,
-	"prenom" VARCHAR(100) NOT NULL,
-	"telephone" VARCHAR(15) NOT NULL,
-	"adresse" VARCHAR(100),
-	"mail" VARCHAR(100)
-);
-
-
---  Table Client
 
 DROP TABLE IF EXISTS "client";
 CREATE TABLE "client"
 (
-	
+	"id_client" INTEGER NOT NULL PRIMARY KEY,
+	"nom" VARCHAR(100) NOT NULL,
+	"telephone" VARCHAR(15) NOT NULL,
+	"adresse" VARCHAR(100),
+	"mail" VARCHAR(100)
 );
-
-
---  Table Employé
-
-DROP TABLE IF EXISTS "emplye";
-CREATE TABLE "emplye"
-(
-	"id_employe" INTEGER NOT NULL PRIMARY KEY,
-	"date_emboche" DATE NOT NULL,
-	"poste" VARCHAR(100) NOT NULL,
-	"salaire" NUMERIC(10,3),
-	"statut" VARCHAR(500),
-	"photo" BYTEA
-);
-
-
 
 
 DROP TABLE IF EXISTS "commande";
