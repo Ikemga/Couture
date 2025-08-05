@@ -15,7 +15,7 @@ class LoginLayut(FloatLayout):
         if role:
             print(f"LoginLayutConnexion réussie pour {nom} en tant que {role}.")
             if role == 'admin':
-                app.root.current = 'menu_screen'
+                app.root.current = 'MmenuScreen'
             else:
                 app.root.current = 'user_session'
         else:

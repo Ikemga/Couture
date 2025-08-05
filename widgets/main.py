@@ -25,10 +25,13 @@ class MainApp(App):
         # Ajout d'utilisateurs pour le test (uniquement la première fois)
         # Vous devriez commenter ou supprimer ces lignes en production
         self.db.add_user("admin", "admin123", "admin")
-        self.db.add_user("user1", "user123", "user")
+        self.db.add_user("daouda", "daouda123", "user")
+        self.db.add_user("marcelin", "marcelin123", "user")
+        self.db.add_user("toto", "toto123", "user")
+        self.db.add_user("inouss", "inouss123", "user")
 
         sm = LoginLayut()
-        sm.add_widget(LoginLayut(name='menu_screen'))
+        sm.add_widget(LoginLayut(name='menuScreen'))
         #sm.add_widget(MenuScreen(name='menu_screen'))
         
         return sm

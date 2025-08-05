@@ -1,10 +1,12 @@
 import sqlite3
 
+
+#db_name = "../db/couture_bd.db"
 class bd_manager:
     """
     Classe pour gérer la connexion et les opérations sur une base de données SQLite.
     """
-    def __init__(self, db_name="mon_app.db"):
+    def __init__(self, db_name="../db/couture_bd.db"):
         self.db_name = db_name
         self.conn = None
         self.cursor = None
@@ -21,16 +23,18 @@ class bd_manager:
 
     def create_tables(self):
         
+        #Supprime la table si elle exi
+        
         self.cursor.execute("DROP TABLE IF EXISTS utilisateurs")
 
         # Exemple de création de table
-        #Supprime la table si elle exi
+        
         self.cursor.execute("""
             CREATE TABLE IF NOT EXISTS utilisateurs (
                 id INTEGER PRIMARY KEY AUTOINCREMENT,
                 nom TEXT NOT NULL,
                 password TEXT UNIQUE,
-                role TEXT NOT NULL DEFAULT "user"
+                role TEXT NOT NULL DEFAULT 'user'
             );
         """)
         
