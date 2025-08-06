@@ -13,7 +13,7 @@ from login import LoginLayut
 from bd_manage import bd_manager
 
 Builder.load_file('../views/login.kv')
-Builder.load_file('../views/menu.kv')
+#Builder.load_file('../views/menu.kv')
 
 class MenuScreen(Screen):
     pass
@@ -31,7 +31,7 @@ class MainApp(App):
         self.db.add_user("inouss", "inouss123", "user")
 
         sm = LoginLayut()
-        sm.add_widget(LoginLayut(name='menuScreen'))
+        #sm.add_widget(LoginLayut(name='menuScreen'))
         #sm.add_widget(MenuScreen(name='menu_screen'))
         
         return sm

@@ -29,10 +29,10 @@ MODLIBS=           $(LOCALMODLIBS) $(BASEMODLIBS)
 
 # === Variables set by configure
 VERSION=	3.11
-srcdir=		/home/smith/projet/Couture/.buildozer/android/platform/build-arm64-v8a_armeabi-v7a/build/other_builds/hostpython3/desktop/hostpython3
-VPATH=		/home/smith/projet/Couture/.buildozer/android/platform/build-arm64-v8a_armeabi-v7a/build/other_builds/hostpython3/desktop/hostpython3
-abs_srcdir=	/home/smith/projet/Couture/.buildozer/android/platform/build-arm64-v8a_armeabi-v7a/build/other_builds/hostpython3/desktop/hostpython3
-abs_builddir=	/home/smith/projet/Couture/.buildozer/android/platform/build-arm64-v8a_armeabi-v7a/build/other_builds/hostpython3/desktop/hostpython3/native-build
+srcdir=		/home/smith/Documents/Couture/.buildozer/android/platform/build-arm64-v8a_armeabi-v7a/build/other_builds/hostpython3/desktop/hostpython3
+VPATH=		/home/smith/Documents/Couture/.buildozer/android/platform/build-arm64-v8a_armeabi-v7a/build/other_builds/hostpython3/desktop/hostpython3
+abs_srcdir=	/home/smith/Documents/Couture/.buildozer/android/platform/build-arm64-v8a_armeabi-v7a/build/other_builds/hostpython3/desktop/hostpython3
+abs_builddir=	/home/smith/Documents/Couture/.buildozer/android/platform/build-arm64-v8a_armeabi-v7a/build/other_builds/hostpython3/desktop/hostpython3/native-build
 
 
 CC=		gcc
@@ -303,10 +303,16 @@ MODULE__CRYPT_LDFLAGS=-lcrypt
 MODULE__DECIMAL_STATE=yes
 MODULE__DECIMAL_CFLAGS=-I$(srcdir)/Modules/_decimal/libmpdec -DCONFIG_64=1 -DANSI=1 -DHAVE_UINT128_T=1
 MODULE__DECIMAL_LDFLAGS=-lm $(LIBMPDEC_A)
-MODULE__GDBM_STATE=missing
+MODULE__GDBM_STATE=yes
+MODULE__GDBM_CFLAGS=
+MODULE__GDBM_LDFLAGS=-lgdbm
 MODULE_NIS_STATE=missing
-MODULE__SQLITE3_STATE=disabled
-MODULE__TKINTER_STATE=missing
+MODULE__SQLITE3_STATE=yes
+MODULE__SQLITE3_CFLAGS= -I$(srcdir)/Modules/_sqlite
+MODULE__SQLITE3_LDFLAGS=-lsqlite3 
+MODULE__TKINTER_STATE=yes
+MODULE__TKINTER_CFLAGS=-I/usr/include/tcl8.6  -Wno-strict-prototypes -DWITH_APPINIT=1
+MODULE__TKINTER_LDFLAGS=-ltk8.6 -ltkstub8.6 -ltcl8.6 -ltclstub8.6 
 MODULE__UUID_STATE=yes
 MODULE__UUID_CFLAGS=-I/usr/include/uuid 
 MODULE__UUID_LDFLAGS=-luuid 

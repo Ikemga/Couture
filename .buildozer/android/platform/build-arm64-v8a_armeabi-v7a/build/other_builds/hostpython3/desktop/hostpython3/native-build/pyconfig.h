@@ -440,7 +440,7 @@
 /* #undef HAVE_GDBM_DASH_NDBM_H */
 
 /* Define to 1 if you have the <gdbm.h> header file. */
-/* #undef HAVE_GDBM_H */
+#define HAVE_GDBM_H 1
 
 /* Define to 1 if you have the <gdbm/ndbm.h> header file. */
 /* #undef HAVE_GDBM_NDBM_H */
@@ -687,7 +687,7 @@
 /* #undef HAVE_LIBSENDFILE */
 
 /* Define to 1 if you have the `sqlite3' library (-lsqlite3). */
-/* #undef HAVE_LIBSQLITE3 */
+#define HAVE_LIBSQLITE3 1
 
 /* Define to 1 if you have the <libutil.h> header file. */
 /* #undef HAVE_LIBUTIL_H */
@@ -1568,7 +1568,7 @@
 /* #undef PY_SQLITE_ENABLE_LOAD_EXTENSION */
 
 /* Define if SQLite was compiled with the serialize API */
-/* #undef PY_SQLITE_HAVE_SERIALIZE */
+#define PY_SQLITE_HAVE_SERIALIZE 1
 
 /* Default cipher suites list for ssl module. 1: Python's preferred selection,
    2: leave OpenSSL defaults untouched, 0: custom string */

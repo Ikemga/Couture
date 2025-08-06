@@ -1,0 +1,83 @@
+LoginLayut:
+<LoginLayut>:
+    canvas.before:
+        Color:
+            rgb:0.2, 0.2, 0.0
+        Rectangle:
+            pos: self.pos
+            size: self.size
+    orientation: 'vertical'
+
+    
+    FloatLayout:
+        
+        canvas.before:
+            Color:
+                rgb:1,1,1
+            RoundedRectangle:
+                pos: self.pos
+                size: self.size
+                radius: [20, 20, 20, 20]
+        orientation: 'vertical'
+        
+        
+        pos_hint: {'center_x':0.5, 'center_y': 0.5}
+        size_hint: (0.8,0.8)
+        Label:
+            text:'User Login'
+            color:.2, 0.6, 1, 1
+            font_size: '50sp'
+            font_weight: 'bold'
+            size_hint_y: None
+            height: '40dp'
+            pos_hint: {'center_x': 0.5, 'top': 0.9}
+
+        FloatLayout:
+            orientation:'vertical'
+            pos_hint: {'center_x': 0.5, 'center_y': 0.5}
+            size_hint: (1, 1)
+
+            BoxLayout:
+                orientation: 'vertical'
+                size_hint: (0.7, 0.5)
+                #height: '200dp'
+                spacing: '10dp'
+                padding: '10dp'
+                pos_hint: {'center_x': 0.5, 'center_y': 0.5}
+                TextInput:
+                    id:'username_input'
+                    hint_text:'Username'
+                    font_size: '30sp'
+                    size_hint_y:None
+                    height: '60dp'
+                    background_normal: ''
+                    multiline: False
+                
+                TextInput:
+                    id:'password_input'
+                    font_size: '30sp'
+                    hint_text:'Password'
+                    
+                    size_hint_y:None
+                    height:'60dp'
+                    background_normal: ''
+                    password: True
+                    multiline: False
+
+                Button:
+                    text:'Connextion'
+                    size_hint_y: None
+                    font_size: '30sp'
+                    height: '48dp'
+                    on_press: root.login(username_input.text, password_input.text)
+                
+
+                Label:
+                    text: 'Mot de passe oublié ?'
+                    color: 0.2, 0.6, 1, 1
+                    font_size: '12sp'
+                    font_size: '30sp'
+                    size_hint_y: None
+                    height: '24dp'
+
+

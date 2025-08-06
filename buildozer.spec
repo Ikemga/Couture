@@ -1,33 +1,22 @@
 [app]
 
-# (ligne 17) nom du paquet
-package.name = MonAppKivy
-
-# (ligne 19) nom du dossier du code
-package.domain = org.test.monapp
-
-
-# (ligne 62) point d'entrée
-
-# (ligne 72) permissions (si tu veux accès Internet ou stockage)
-
-# (ligne 90) architecture Android (on active les deux principales)
-arch = arm64-v8a, armeabi-v7a
-
-
 # (str) Title of your application
-title = Prestalink
+title = Couture Gestion
 
+# (str) Package name
+package.name = couture
+
+# (str) Package domain (needed for android/ios packaging)
+package.domain = org.ApplicationGestion
 
 # (str) Source code where the main.py live
 source.dir = .
 
 # (list) Source files to include (let empty to include all the files)
-source.include_exts = py,png,jpg,jpeg,kv,atlas
-
+source.include_exts = py,png,jpg,kv,atlas
 
 # (list) List of inclusions using pattern matching
-source.include_patterns = assets/*,images/*.png
+#source.include_patterns = assets/*,images/*.png
 
 # (list) Source files to exclude (let empty to not exclude anything)
 #source.exclude_exts = spec
@@ -48,16 +37,17 @@ version = 0.1
 
 # (list) Application requirements
 # comma separated e.g. requirements = sqlite3,kivy
-requirements = python3,kivy,kivymd,pyjwt,httpx,httpcore,h11,certifi,idna,charset-normalizer-,plyer,docutils,pillow
+requirements = python3,kivy,sqlite3,requests
+
 # (str) Custom source folders for requirements
 # Sets custom source for any requirements with recipes
 # requirements.source.kivy = ../../kivy
 
 # (str) Presplash of the application
-presplash.filename = assets/Logo.png
+#presplash.filename = %(source.dir)s/data/presplash.png
 
 # (str) Icon of the application
-icon.filename = assets/Logo.png
+#icon.filename = %(source.dir)s/data/icon.png
 
 # (list) Supported orientations
 # Valid options are: landscape, portrait, portrait-reverse or landscape-reverse
@@ -104,11 +94,8 @@ fullscreen = 0
 #icon.adaptive_background.filename = %(source.dir)s/data/icon_bg.png
 
 # (list) Permissions
-(See https://python-for-android.readthedocs.io/en/latest/buildoptions/#build-options-1 for all the supported syntaxes and properties)
-android.permissions = android.permission.INTERNET, (name=android.permission.WRITE_EXTERNAL_STORAGE;maxSdkVersion=18)
-
-
-
+# (See https://python-for-android.readthedocs.io/en/latest/buildoptions/#build-options-1 for all the supported syntaxes and properties)
+#android.permissions = android.permission.INTERNET, (name=android.permission.WRITE_EXTERNAL_STORAGE;maxSdkVersion=18)
 
 # (list) features (adds uses-feature -tags to manifest)
 #android.features = android.hardware.usb.host
@@ -117,7 +104,7 @@ android.permissions = android.permission.INTERNET, (name=android.permission.WRIT
 android.api = 31
 
 # (int) Minimum API your APK / AAB will support.
-#android.minapi = 21
+android.minapi = 21
 
 # (int) Android SDK version to use
 #android.sdk = 20
@@ -455,7 +442,7 @@ warn_on_root = 1
 #    and extend the excluded directories to remove the HD content.
 #
 #[app@demo]
-title = Prestalink (demo)
+#title = My Application (demo)
 #
 #[app:source.exclude_patterns@demo]
 #images/hd/*
